@@ -14,8 +14,8 @@ void deferred_execution__execute(DeferredExecution_Config* config,
   if (!state->deferred) {
     return;
   }
+  state->deferred = 0;
   if (config->target) {
     config->target();
   }
-  state->deferred = 0;
 }

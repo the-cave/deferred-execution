@@ -5,14 +5,14 @@
 #ifndef __DEFERRED_EXECUTION_H
 #define __DEFERRED_EXECUTION_H
 
-#include <stdint.h>
+#include <stdbool.h>
 
 typedef struct _deferred_execution__config {
   void (*target)(void);
 } DeferredExecution_Config;
 
 typedef struct _deferred_execution__state {
-  uint8_t deferred;
+  bool deferred;
 } DeferredExecution_State;
 
 #define deferred_execution__init(state) \

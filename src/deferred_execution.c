@@ -6,7 +6,7 @@
 
 void deferred_execution__defer(DeferredExecution_Config* config,
                                DeferredExecution_State* state) {
-  state->deferred = 1;
+  state->deferred = true;
 }
 
 void deferred_execution__execute(DeferredExecution_Config* config,
@@ -14,7 +14,7 @@ void deferred_execution__execute(DeferredExecution_Config* config,
   if (!state->deferred) {
     return;
   }
-  state->deferred = 0;
+  state->deferred = false;
   if (config->target) {
     config->target();
   }
